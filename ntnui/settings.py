@@ -116,6 +116,11 @@ DATABASES = {
         'NAME': 'mydatabase',
     }
 }
+
+if 'DATABASE_URL' in os.environ:
+    import dj_database_url
+    DATABASES = {'default': dj_database_url.config()}
+
 AUTH_USER_MODEL = "accounts.User"
 AUTH_GROUPIMAGE_MODEL = "groups.GroupImage"
 
