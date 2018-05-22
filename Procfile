@@ -1,1 +1,1 @@
-web: python manage.py runserver --timeout 15 --keep-alive 5
+web: python manage.py runserver
