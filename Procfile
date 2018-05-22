@@ -1,1 +1,1 @@
-web: python manage.py runserver
+web: gunicorn booking.wsgi:application --log-file -
