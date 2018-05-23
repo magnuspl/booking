@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 import environ
-import dj_database_url
 
 env = environ.Env(
     EXELINE_USER=(str, ''),
@@ -99,19 +98,24 @@ WSGI_APPLICATION = 'ntnui.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'dev_database.db'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd3bvi1b4j76g3d',
+        'USER': 'ignpvxajvfcqol',
+        'PASSWORD': 'f02a43bcf92d30e1be025f11c335df746e68ecff93f18025248db6b432afd2da',
+        'HOST': 'ec2-54-217-208-52.eu-west-1.compute.amazonaws.com',
+        'PORT': 5432,
     }
 }
 
-if os.environ.get('DATABASE_URL'):
-    db_from_env = dj_database_url.config(conn_max_age=500)
-    DATABASES['default'].update(db_from_env)
-    print('Using DB from environment variable.')
-else:
-    print('Using default file-based DB.')
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase',
+    }
+}
 
 AUTH_USER_MODEL = "accounts.User"
 AUTH_GROUPIMAGE_MODEL = "groups.GroupImage"
