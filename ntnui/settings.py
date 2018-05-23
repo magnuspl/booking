@@ -105,17 +105,18 @@ DATABASES = {
         'NAME': 'd3bvi1b4j76g3d',
         'USER': 'ignpvxajvfcqol',
         'PASSWORD': 'f02a43bcf92d30e1be025f11c335df746e68ecff93f18025248db6b432afd2da',
-        'HOST': 'ec2-54-217-208-52.eu-west-1.compute.amazonaws.com',
+        'HOST': 'postgres://ignpvxajvfcqol:f02a43bcf92d30e1be025f11c335df746e68ecff93f18025248db6b432afd2da@ec2-54-217-208-52.eu-west-1.compute.amazonaws.com:5432/d3bvi1b4j76g3d',
         'PORT': 5432,
     }
 }
-
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'mydatabase',
     }
 }
+"""
 
 AUTH_USER_MODEL = "accounts.User"
 AUTH_GROUPIMAGE_MODEL = "groups.GroupImage"
