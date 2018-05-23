@@ -20,3 +20,4 @@ pylint-django
 prospector
 gunicorn
 dj-database-url==0.4.2
+whitenoise
