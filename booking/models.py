@@ -35,19 +35,6 @@ class Booking(models.Model):
     end = models.DateTimeField(_(u'End'), blank=True)
     queueNo = models.IntegerField(default=0)
 
-    # Append SportsGroups to 'group' field.
-    try:
-        tu = tuple(SportsGroup.objects.all().values_list('name', 'name'))
-        if not tu:
-            tu = (
-                ('', '---------'),
-            )
-        else:
-            tu = tuple(SportsGroup.objects.all().values_list('name', 'name'))
-    except OperationalError:
-        tu = (
-            ('', '---------'),
-        )
     group = models.CharField(max_length=200, blank=True)
 
 
