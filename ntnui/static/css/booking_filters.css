@@ -212,7 +212,7 @@ select {
         display: inline-block;
         margin-top: 1% !important;
     }
-    tooltip-info {
+    .tooltip-info {
         display: none;
     }
 }
